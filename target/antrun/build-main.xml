@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <taskdef resource="org/cruxframework/crux/tools/crux-module-tools.xml">
+    <classpath>
+      <path refid="maven.compile.classpath"/>
+    </classpath>
+  </taskdef>
+  <blockremove file="D:\Devops\Softwares\apache-maven-3.6.3\warwar\target/warwar/WEB-INF//web.xml" beginmarker="&lt;!--antReplacementBlockBegin--&gt;" endmarker="&lt;!--antReplacementBlockEnd--&gt;"/>
+  <serviceMapper projectDir="D:\Devops\Softwares\apache-maven-3.6.3\warwar\target/warwar">
+    <classpath>
+      <path refid="maven.compile.classpath"/>
+      <pathelement path="D:\Devops\Softwares\apache-maven-3.6.3\warwar\target/warwar/WEB-INF//classes/"/>
+    </classpath>
+  </serviceMapper>
+  <cruxmodulecompiler outputDir="D:\Devops\Softwares\apache-maven-3.6.3\warwar\target/warwar" keepPagesGeneratedFiles="true" webDir="D:\Devops\Softwares\apache-maven-3.6.3\warwar\target/warwar" pagesOutputDir="D:\Devops\Softwares\apache-maven-3.6.3\warwar\target/warwar" pageFileExtension="html" srcDir="D:\Devops\Softwares\apache-maven-3.6.3\warwar\src\main\java" outputCharset="UTF-8" doNotPreCompileJavaSource="true">
+    <classpath>
+      <path refid="maven.compile.classpath"/>
+    </classpath>
+    <jvmarg value="-Xmx768M"/>
+    <jvmarg value="-Xms256M"/>
+    <arg value="-localWorkers"/>
+    <arg value="2"/>
+  </cruxmodulecompiler>
+</target>
+</project>
